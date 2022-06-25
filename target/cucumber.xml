@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="3" time="68.246">
+    <testcase classname="Place order for the products." name="Adding product experience for product search in both home page and offer page" time="27.259">
+        <system-out>
+            <![CDATA[Given User is on Greencart landing page.....................................passed
+When User searched with shortname Tom and extracted actual name of product..passed
+And added "3" items of the selected products to cart and proceeds to checkout.passed
+Then validate the Tom items in checkout page................................passed
+And verify user has ability to enter promo code and place the order.........passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Search and place order for the products." name="Search Experience for product search in both home page and offer page" time="15.483">
+        <system-out>
+            <![CDATA[Given User is on Greencart landing page.....................................passed
+When User searched with shortname Tom and extracted actual name of product..passed
+Then User searched for Tom shortname in offers page to check if product exists.passed
+And validate if home page and offer page products are same..................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Search and place order for the products." name="Search Experience for product search in both home page and offer page 2" time="24.756">
+        <failure message="expected:&lt;[No data]&gt; but was:&lt;[Beetroot]&gt;" type="org.junit.ComparisonFailure">
+            <![CDATA[Given User is on Greencart landing page.....................................passed
+When User searched with shortname Beet and extracted actual name of product.passed
+Then User searched for Beet shortname in offers page to check if product exists.passed
+And validate if home page and offer page products are same..................failed
+
+StackTrace:
+org.junit.ComparisonFailure: expected:<[No data]> but was:<[Beetroot]>
+	at org.junit.Assert.assertEquals(Assert.java:117)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at stepDefinitions.OfferPageSteps.validate_if_home_page_and_offer_page_products_are_same(OfferPageSteps.java:54)
+	at ✽.validate if home page and offer page products are same(file:///D:/workspace_eclipse/CucumberFrameworkJunit/src/test/java/features/searchProduct.feature:9)
+]]>
+        </failure>
+    </testcase>
+</testsuite>
